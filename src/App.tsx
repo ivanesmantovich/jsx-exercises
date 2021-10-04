@@ -42,6 +42,7 @@ const ErrorBox: FC = ({ children }) => {
 		</div>
 	);
 };
+// Error Box ---------------------------------------
 
 const YellowBox: FC = ({ children }) => {
 	return (
@@ -63,26 +64,61 @@ const Container: FC = ({ children }) => {
 	);
 };
 
-const FirstChildOnly: FC = ({ children }) => {
-	let items = React.Children.toArray(children);
-	return <div className="container">{items[0]}</div>;
-};
-
-const LastChildOnly: FC = ({ children }) => {
-	let items = React.Children.toArray(children);
-	return <div className="container">{items[items.length - 1]}</div>;
-};
-
 function App() {
 	return (
 		<div className="App">
-			<LastChildOnly>
-				<ErrorBox>The world is ending... Hover on to prevent!</ErrorBox>
-				<YellowBox>Idea could come anytime... Catch it!</YellowBox>
-			</LastChildOnly>
+			<Container/>
 		</div>
 	);
 }
-// Error Box ---------------------------------------
+
+// const FirstChildOnly: FC = ({ children }) => {
+// 	let items = React.Children.toArray(children);
+// 	return <div className="container">{items[0]}</div>;
+// };
+
+// const LastChildOnly: FC = ({ children }) => {
+// 	let items = React.Children.toArray(children);
+// 	return <div className="container">{items[items.length - 1]}</div>;
+// };
+
+// interface HeadProps {
+// 	num: number;
+// }
+
+// const Head: FC<HeadProps> = ({ children, ...props }) => {
+// 	let childrenToReturn = React.Children.map(children, (child, i) => {
+// 		if (i >= props.num) return;
+// 		return child;
+// 	});
+// 	return <div className="container">{childrenToReturn}</div>;
+// };
+
+// interface TailProps {
+// 	num: number;
+// }
+
+// const Tail: FC<TailProps> = ({ children, ...props }) => {
+// 	let childrenToReturn = React.Children.map(children, (child, i) => {
+// 		if (i < React.Children.toArray(children).length - props.num) return;
+// 		return child;
+// 	});
+// 	return <div className="container">{childrenToReturn}</div>;
+// };
+
+// function App() {
+// 	return (
+// 		<div className="App">
+// 			<Tail num={3}>
+// 				<p>First</p>
+// 				<p>Second</p>
+// 				<p>Third</p>
+// 				<p>Fourth</p>
+// 				<p>Fifth</p>
+// 				<p>Sixth</p>
+// 			</Tail>
+// 		</div>
+// 	);
+// }
 
 export default App;
