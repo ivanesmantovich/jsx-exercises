@@ -1,0 +1,106 @@
+/* Confirmation styles */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+html,
+body,
+.App {
+	height: 100%;
+	display: grid;
+}
+
+.confirmation {
+	margin: auto;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.confirmation .title {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.confirmation .message {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 5px;
+}
+
+.buttons button {
+  justify-self: center;
+  max-width: 100px ;
+} */
+/* Confirmation styles */
+
+/* Error Box styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+html,
+body,
+.App {
+	height: 100%;
+	display: grid;
+}
+
+.container {
+	margin: auto;
+  display: grid;
+  gap: 5px;
+}
+
+.errorbox {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	display: grid;
+	grid-template-columns: 1fr 10fr;
+	padding: 20px;
+	background-color: #F66573;
+	border-radius: 10px;
+	border: 2px solid #740613;
+	color: #3F1317;
+	transition: 1s;
+}
+
+.errorbox .message {
+	margin-left: 10px;
+	align-self: center;
+}
+
+.errorbox:hover {
+	color: white;
+	background-color: white;
+	border: none;
+}
+
+.yellowbox {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	display: grid;
+	grid-template-columns: 1fr 10fr;
+	padding: 20px;
+	background-color: #fdfd9b;
+	border-radius: 10px;
+	border: 2px solid #644536;
+	color: #4F372B;
+	transition: 1s;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+}
+
+.yellowbox:hover {
+	color: white;
+	background-color: white;
+	border: none;
+}
+
+.yellowbox .message {
+	margin-left: 10px;
+	align-self: center;
+}
+
+/* Error Box styles */
