@@ -1,6 +1,9 @@
 import React, { useState, FC, ReactElement } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { House } from './components/House';
+import { Parent } from './components/Parent';
+import { Counter } from './components/Counter';
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -32,45 +35,45 @@ import './App.css';
 // Confirmation ---------------------------------------
 
 // Error Box ---------------------------------------
-const ErrorBox: FC = ({ children }) => {
-	return (
-		<div className="errorbox">
-			<div>
-				<i className="fa-2x fas fa-exclamation-triangle"></i>
-			</div>
-			<div className="message">{children}</div>
-		</div>
-	);
-};
-// Error Box ---------------------------------------
+// const ErrorBox: FC = ({ children }) => {
+// 	return (
+// 		<div className="errorbox">
+// 			<div>
+// 				<i className="fa-2x fas fa-exclamation-triangle"></i>
+// 			</div>
+// 			<div className="message">{children}</div>
+// 		</div>
+// 	);
+// };
+// // Error Box ---------------------------------------
 
-const YellowBox: FC = ({ children }) => {
-	return (
-		<div className="yellowbox">
-			<div className="icon">
-				<i className="fa-2x far fa-lightbulb"></i>
-			</div>
-			<div className="message">{children}</div>
-		</div>
-	);
-};
+// const YellowBox: FC = ({ children }) => {
+// 	return (
+// 		<div className="yellowbox">
+// 			<div className="icon">
+// 				<i className="fa-2x far fa-lightbulb"></i>
+// 			</div>
+// 			<div className="message">{children}</div>
+// 		</div>
+// 	);
+// };
 
-const Container: FC = ({ children }) => {
-	return (
-		<div className="container">
-			<ErrorBox>The world is ending... Hover on to prevent!</ErrorBox>
-			<YellowBox>Idea could come anytime... Catch it!</YellowBox>
-		</div>
-	);
-};
+// const Container: FC = ({ children }) => {
+// 	return (
+// 		<div className="container">
+// 			<ErrorBox>The world is ending... Hover on to prevent!</ErrorBox>
+// 			<YellowBox>Idea could come anytime... Catch it!</YellowBox>
+// 		</div>
+// 	);
+// };
 
-function App() {
-	return (
-		<div className="App">
-			<Container/>
-		</div>
-	);
-}
+// function App() {
+// 	return (
+// 		<div className="App">
+// 			<Container/>
+// 		</div>
+// 	);
+// }
 
 // const FirstChildOnly: FC = ({ children }) => {
 // 	let items = React.Children.toArray(children);
@@ -120,5 +123,21 @@ function App() {
 // 		</div>
 // 	);
 // }
+
+const App: FC = () => {
+
+	const [state, changeState] = useState({mounted: true});
+
+	const mountCounter = () => changeState({mounted:true})
+	const unmountCounter = () => changeState({mounted:false})
+
+	return (
+		<div className="App">
+			<button onClick={mountCounter} disabled={state.mounted}>Mount</button>
+			<button onClick={unmountCounter} disabled={!state.mounted}>Unmount</button>
+			{state.mounted ? <Counter/> : null}
+		</div>
+	);
+};
 
 export default App;
