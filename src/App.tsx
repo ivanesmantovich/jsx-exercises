@@ -4,6 +4,12 @@ import './App.css';
 import { House } from './components/House';
 import { Parent } from './components/Parent';
 import { Counter } from './components/Counter';
+import { OneTimeButton } from './components/OneTimeButton';
+import { StepTracker } from './components/StepTracker';
+import { ListOfNumbers } from './components/ListOfNumbers';
+import { Room } from './components/Room';
+import { RandomList } from './components/RandomList';
+import { AudioControls } from './components/AudioControls';
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -124,18 +130,26 @@ import { Counter } from './components/Counter';
 // 	);
 // }
 
+// const App: FC = () => {
+
+// 	const [state, changeState] = useState({mounted: true});
+
+// 	const mountCounter = () => changeState({mounted:true})
+// 	const unmountCounter = () => changeState({mounted:false})
+
+// 	return (
+// 		<div className="App">
+// 			<button onClick={mountCounter} disabled={state.mounted}>Mount</button>
+// 			<button onClick={unmountCounter} disabled={!state.mounted}>Unmount</button>
+// 			{state.mounted ? <Counter/> : null}
+// 		</div>
+// 	);
+// };
+
 const App: FC = () => {
-
-	const [state, changeState] = useState({mounted: true});
-
-	const mountCounter = () => changeState({mounted:true})
-	const unmountCounter = () => changeState({mounted:false})
-
 	return (
 		<div className="App">
-			<button onClick={mountCounter} disabled={state.mounted}>Mount</button>
-			<button onClick={unmountCounter} disabled={!state.mounted}>Unmount</button>
-			{state.mounted ? <Counter/> : null}
+			<AudioControls/>
 		</div>
 	);
 };
