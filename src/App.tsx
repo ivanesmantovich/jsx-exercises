@@ -10,6 +10,10 @@ import { ListOfNumbers } from './components/ListOfNumbers';
 import { Room } from './components/Room';
 import { RandomList } from './components/RandomList';
 import { AudioControls } from './components/AudioControls';
+import { Hello } from './components/Hello';
+import { PizzaOrder } from './components/PizzaOrder';
+import { OrderList } from './components/OrderList';
+import { Order } from './components/Order';
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -147,9 +151,44 @@ import { AudioControls } from './components/AudioControls';
 // };
 
 const App: FC = () => {
+	const [size, setSize] = useState<string>('Not Selected');
+	const [topping, setTopping] = useState<string>('None');
+	const [glutenfree, setGlutenfree] = useState<boolean>(false);
+	const [special, setSpecial] = useState<string>('Not specified');
+	const [orders, setOrders] = useState<string[]>([]);
+
+	const addOrder = () => {
+		let order: string = `Size: ${size}, Topping: ${topping}, Gluten Free: ${glutenfree}, Special: ${special}`;
+		setOrders([...orders, order]);
+	};
+
+	const changeGluten = () => {
+		setGlutenfree(!glutenfree);
+	};
+
+	const changeSize = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSize(event.target.value);
+	};
+
+	const changeTopping = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		setTopping(event.target.value);
+	};
+
+	const changeSpecial = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+		setSpecial(event.target.value);
+	};
+
 	return (
 		<div className="App">
-			<AudioControls/>
+			<PizzaOrder
+				size={size}
+				changeSize={changeSize}
+				changeTopping={changeTopping}
+				changeSpecial={changeSpecial}
+				changeGluten={changeGluten}
+				addOrder={addOrder}
+			/>
+			<OrderList orders={orders} />
 		</div>
 	);
 };

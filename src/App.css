@@ -105,7 +105,9 @@ body,
 
 /* Error Box styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Audio styles */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 .control {
 	font-family: 'Lato', sans-serif;
@@ -123,6 +125,11 @@ body,
 	grid-column: 2 / 5;
 	grid-row: 1 / 2;
 	text-align: center;
+}
+
+input {
+	border: none;
+	font-size: 1.1rem;
 }
 
 .name {
@@ -144,6 +151,16 @@ body,
 	align-items: center;
 }
 
+.noselect {
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none; 
+	-khtml-user-select: none; 
+	-moz-user-select: none;
+	-ms-user-select: none; 
+	user-select: none; 
+									
+}
+
 .button {
 	display: flex;
 	justify-content: center;
@@ -155,5 +172,17 @@ body,
 }
 
 .button:hover {
-	background-color: #F3F5F6;
+	background-color: #f3f5f6;
+} */
+/* Audio styles */
+
+/* Pizza styles */
+
+.pizzaOrder {
+	margin: 5px;
 }
+.pizzaOrder div {
+	margin-top: 5px;
+}
+
+/* Pizza styles */
