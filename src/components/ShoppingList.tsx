@@ -30,8 +30,8 @@ const reducer: React.Reducer<IState, IAction> = (state, action) => {
 			];
 		case 'remove':
 			return state.filter((_, index) => index !== action.index);
-        case 'clear':
-            return [];
+		case 'clear':
+			return [];
 		default:
 			return state;
 	}
@@ -57,7 +57,7 @@ export const ShoppingList: FC = () => {
 	};
 
 	return (
-		<>
+		<div className='container'>
 			<form onSubmit={handleSubmit}>
 				<input ref={inputRef} />
 			</form>
@@ -77,7 +77,11 @@ export const ShoppingList: FC = () => {
 					);
 				})}
 			</ul>
-            <button onClick={() => dispatch({type:'clear', name:'clear', index: -1})}>Clear</button>
-		</>
+			<button
+				onClick={() => dispatch({ type: 'clear', name: 'clear', index: -1 })}
+			>
+				Clear
+			</button>
+		</div>
 	);
 };

@@ -15,6 +15,8 @@ import { PizzaOrder } from './components/PizzaOrder';
 import { OrderList } from './components/OrderList';
 import { Order } from './components/Order';
 import { ShoppingList } from './components/ShoppingList';
+import LoginUseReducer from './components/LoginForm';
+import { Keypad } from './components/Keypad';
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -197,7 +199,7 @@ import { ShoppingList } from './components/ShoppingList';
 const App:FC = () => {
 	return (
 		<div className='App'>
-			<ShoppingList/>
+			<Keypad/>
 		</div>
 	)
 }
