@@ -150,4 +150,3 @@ export const Keypad: FC = () => {
 		</div>
 	);
 };
-

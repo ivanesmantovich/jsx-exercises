@@ -16,8 +16,7 @@ import { OrderList } from './components/OrderList';
 import { Order } from './components/Order';
 import { ShoppingList } from './components/ShoppingList';
 import LoginUseReducer from './components/LoginForm';
-import { Keypad } from './components/Keypad'; 
-import { LogEffect } from './components/UseEffectPlayground';
+import { Keypad } from './components/Keypad';
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -200,7 +199,7 @@ import { LogEffect } from './components/UseEffectPlayground';
 const App:FC = () => {
 	return (
 		<div className='App'>
-			<LogEffect/>
+			
 		</div>
 	)
 }
