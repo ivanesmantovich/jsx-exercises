@@ -17,6 +17,7 @@ import { Order } from './components/Order';
 import { ShoppingList } from './components/ShoppingList';
 import LoginUseReducer from './components/LoginForm';
 import { Keypad } from './components/Keypad';
+import {Reddit } from './UseEffectPlayground';
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -199,7 +200,7 @@ import { Keypad } from './components/Keypad';
 const App:FC = () => {
 	return (
 		<div className='App'>
-			
+			<Reddit subreddit='reactjs'/>
 		</div>
 	)
 }
