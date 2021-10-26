@@ -17,7 +17,10 @@ import { Order } from './components/Order';
 import { ShoppingList } from './components/ShoppingList';
 import LoginUseReducer from './components/LoginForm';
 import { Keypad } from './components/Keypad';
-import {Reddit } from './UseEffectPlayground';
+import {Reddit } from './components/UseEffectPlayground';
+import react from "@vitejs/plugin-react";
+import {TitleChanger} from "./components/TitleChanger";
+import {ClickHandler} from "./components/ClickHandler";
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -198,11 +201,28 @@ import {Reddit } from './UseEffectPlayground';
 // };
 
 const App:FC = () => {
+	const [inputValue, setValue] = useState('reactjs')
+	const [subreddit, setSubreddit] = useState(inputValue)
+
+	const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault()
+		setSubreddit(inputValue)
+	}
+
 	return (
 		<div className='App'>
-			<Reddit subreddit='reactjs'/>
+			<form onSubmit={handleSubmit}><input value={inputValue} onChange={event => setValue(event.target.value)}/></form>
+			<Reddit subreddit={subreddit}/>
 		</div>
 	)
 }
+
+// const App:FC = () => {
+// 	return (
+// 		<div className='App'>
+// 			<ClickHandler/>
+// 		</div>
+// 	)
+// }
 
 export default App;

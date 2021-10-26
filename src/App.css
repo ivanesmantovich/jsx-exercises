@@ -204,21 +204,32 @@ h1 {
 
 /* Keypad styles */
 
-.keypad {
-	display: grid !important;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
-	width: 300px;
-	height: 300px;
-}
+/*.keypad {*/
+/*	display: grid !important;*/
+/*	grid-template-columns: repeat(3, 1fr);*/
+/*	gap: 10px;*/
+/*	width: 300px;*/
+/*	height: 300px;*/
+/*}*/
 
-.keypadButton {
-	height: 100%;
-	width: 100%;
-	font-size: 3rem;
-}
+/*.keypadButton {*/
+/*	height: 100%;*/
+/*	width: 100%;*/
+/*	font-size: 3rem;*/
+/*}*/
 
 /* Keypad styles */
+
+/*ClickHandler styles*/
+
+.clickMessages {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/*ClickHandler styles*/
 
 .container {
 	display: inline-block;
