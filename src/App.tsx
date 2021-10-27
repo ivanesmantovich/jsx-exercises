@@ -7,7 +7,7 @@ import { Counter } from './components/Counter';
 import { OneTimeButton } from './components/OneTimeButton';
 import { StepTracker } from './components/StepTracker';
 import { ListOfNumbers } from './components/ListOfNumbers';
-import { Room } from './components/Room';
+// import { Room } from './components/Room';
 import { RandomList } from './components/RandomList';
 import { AudioControls } from './components/AudioControls';
 import { Hello } from './components/Hello';
@@ -21,6 +21,7 @@ import {Reddit } from './components/UseEffectPlayground';
 import react from "@vitejs/plugin-react";
 import {TitleChanger} from "./components/TitleChanger";
 import {ClickHandler} from "./components/ClickHandler";
+import {Room} from "./components/ContextRoom";
 
 // Confirmation ---------------------------------------
 // interface ConfirmationProps {
@@ -200,29 +201,29 @@ import {ClickHandler} from "./components/ClickHandler";
 // 	);
 // };
 
-const App:FC = () => {
-	const [inputValue, setValue] = useState('reactjs')
-	const [subreddit, setSubreddit] = useState(inputValue)
-
-	const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault()
-		setSubreddit(inputValue)
-	}
-
-	return (
-		<div className='App'>
-			<form onSubmit={handleSubmit}><input value={inputValue} onChange={event => setValue(event.target.value)}/></form>
-			<Reddit subreddit={subreddit}/>
-		</div>
-	)
-}
-
 // const App:FC = () => {
+// 	const [inputValue, setValue] = useState('reactjs')
+// 	const [subreddit, setSubreddit] = useState(inputValue)
+//
+// 	const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
+// 		event.preventDefault()
+// 		setSubreddit(inputValue)
+// 	}
+//
 // 	return (
 // 		<div className='App'>
-// 			<ClickHandler/>
+// 			<form onSubmit={handleSubmit}><input value={inputValue} onChange={event => setValue(event.target.value)}/></form>
+// 			<Reddit subreddit={subreddit}/>
 // 		</div>
 // 	)
 // }
+
+const App:FC = () => {
+	return (
+		<div className='App'>
+			<Room/>
+		</div>
+	)
+}
 
 export default App;

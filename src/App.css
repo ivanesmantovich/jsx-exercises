@@ -222,14 +222,24 @@ h1 {
 
 /*ClickHandler styles*/
 
-.clickMessages {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
+/*.clickMessages {*/
+/*	-webkit-user-select: none;*/
+/*	-moz-user-select: none;*/
+/*	-ms-user-select: none;*/
+/*	user-select: none;*/
+/*}*/
 
 /*ClickHandler styles*/
+
+/*Room styles*/
+.lit {
+	background-color: yellow;
+}
+
+.dark {
+	background-color: grey;
+}
+/*Room styles*/
 
 .container {
 	display: inline-block;
